@@ -50,19 +50,41 @@
 
     }
 
-    function buscarLeitores(){
+    function buscarLeitor($conexao, $id){
+        $sql = "SELECT * FROM leitores WHERE id = ?";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result();
 
     }
 
-    function buscarLeitoresPorNome(){
+    function buscarLeitorPorNome($conexao, $nome){
+        $sql = "SELECT * FROM leitores WHERE nome LIKE ?";
+        $stmt = $conexao->prepare($sql);
+
+        $nomeBusca = "%" .$nome. "%";
+        $stmt->bind_param("s", $nomeBusca);  
+        $stmt->execute();
+
+        return $stmt->get_result();
+    }
+
+    function atualizarLeitor($conexao, $id, $nome, $senha, $cpf, $telefone, $nascimento, $tipo){
+        $sql = "UPDATE leitores SET nome = ?, senha = ?, cpf = ?, telefone = ?, nascimento = ?, tipo = ? WHERE id = ?";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param("ssssssi", $nome, $senha, $cpf, $telefone, $nascimento, $tipo, $id);
+
+        return $stmt->execute();
 
     }
 
-    function atualizarLeitores(){
+    function deletarLeitor($conexao, $id){
+        $sql = "DELETE FROM leitores where id = ?";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param("i", $id);
 
-    }
-
-    function deletarLeitores(){
+        return $stmt->execute();
 
     }
 

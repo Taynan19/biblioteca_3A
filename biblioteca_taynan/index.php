@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Naymar Jr.</h1>
+    <h1>Neymar Jr.</h1>
 
     <a href="funcoes.php">Funções</a>
     <a href="testes.php">Testes</a>

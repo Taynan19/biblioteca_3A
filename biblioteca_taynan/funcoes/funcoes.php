@@ -123,4 +123,10 @@
 
         return $stmt->execute();
     }
+
+    function buscarLeitor_L($conexao){
+        $leitor = buscarLeitor($conexao, 2);
+        print_r($leitor->fetch_assoc());
+        echo "<br>";
+    }
 ?>

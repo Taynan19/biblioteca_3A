@@ -16,9 +16,10 @@
 </html>
 
 <?php
+
     echo "Bem vindo<3";
-    echo "
-    <a href='funcoes.php'>Funções</a>
-    <a href='testes.php'>Testes</a>
-    ";
+    echo " <a href='/html/funcoes.php'>Funções</a> <a href='/html/testes.php'>Testes</a> 
+    <a href='/html/formularios/cadastro_user.php'>Cadastro de Usuário</a> ";
+
 ?>
+
